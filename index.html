@@ -1,42 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Graha Swara</title>
+  <link rel="stylesheet" href="web.css" />
+  <link rel="stylesheet" href="animate.css">
+  <script src="web.js" defer></script>
 </head>
 <body>
-    <div class="calculator">
-        <div class="display">
-            <input type="text" id="display" readonly>
-        </div>
-        <div class="buttons">
-            <button class="btn clear" onclick="clearDisplay()">C</button>
-            <button class="btn clear" onclick="clearEntry()">CE</button>
-            <button class="btn operator" onclick="appendToDisplay('/')">/</button>
-            <button class="btn operator" onclick="appendToDisplay('*')">×</button>
-            
-            <button class="btn number" onclick="appendToDisplay('7')">7</button>
-            <button class="btn number" onclick="appendToDisplay('8')">8</button>
-            <button class="btn number" onclick="appendToDisplay('9')">9</button>
-            <button class="btn operator" onclick="appendToDisplay('-')">-</button>
-            
-            <button class="btn number" onclick="appendToDisplay('4')">4</button>
-            <button class="btn number" onclick="appendToDisplay('5')">5</button>
-            <button class="btn number" onclick="appendToDisplay('6')">6</button>
-            <button class="btn operator" onclick="appendToDisplay('+')">+</button>
-            
-            <button class="btn number" onclick="appendToDisplay('1')">1</button>
-            <button class="btn number" onclick="appendToDisplay('2')">2</button>
-            <button class="btn number" onclick="appendToDisplay('3')">3</button>
-            <button class="btn equals" onclick="calculate()" rowspan="2">=</button>
-            
-            <button class="btn number zero" onclick="appendToDisplay('0')">0</button>
-            <button class="btn number" onclick="appendToDisplay('.')">.</button>
-            <button class="btn operator" onclick="deleteLast()">⌫</button>
-        </div>
-    </div>
-    <script src="script.js"></script>
+  <div id="layout"></div>
+
+  <template id="page-content">
+    <main class="mainhome-content">
+        <!-- Animation -->
+        <section class="animated">
+          <div class="image-stack">
+            <img src="assets/bumi.webp" class="bumi" alt="bumi" />
+            <img src="assets/teks.webp" class="teks" alt="teks" />
+            <img src="assets/filler.webp" class="filler" alt="filler" />
+            <img src="assets/joglo.webp" class="joglo" alt="joglo" />
+            <img src="assets/honai.webp" class="honai" alt="honai" />
+            <img src="assets/tongkonan.webp" class="tongkonan" alt="tongkonan" />
+          </div>
+        </section>
+
+      <div class="homepage-main-content">
+        <!--About-->
+        <section id="abouts" class="abouts">
+          <h1>About Us</h1>
+          <p> Graha Swara merupakan produk miniatur rumah adat dari berbagai daerah di Indonesia yang terbuat dari daur ulang limbah kayu dan dilengkapi dengan teknologi modern sebagai media belajar yang praktis dan inovatif.</p>
+           <a href="about.html" class="btn">More About Us</a>
+        </section>
+        
+        <!-- Products -->
+        <section id="products" class="products">
+          <h1>Our Products</h1>
+          <div class="product-list" id="product-list">
+            <div class="product-item"><img src="assets/proto1.webp" alt="Product 1" /></div>
+            <div class="product-item"><img src="assets/proto2.webp" alt="Product 2" /></div>
+            <div class="product-item"><img src="assets/proto3.webp" alt="Product 3" /></div>
+          </div>
+          <a href="product.html" class="btn">View All Products</a>
+        </section>
+
+        <!-- Moments -->
+        <section id="moments" class="moments">
+          <h1>Moments</h1>
+          <div class="moment-list" id="moment-list">
+            <div class="moment-item"><img src="assets/moment1.webp" alt="Moment 1" /></div>
+            <div class="moment-item"><img src="assets/moment2.webp" alt="Moment 2" /></div>
+            <div class="moment-item"><img src="assets/moment3.webp" alt="Moment 3" /></div>
+          </div>
+          <a href="moment.html" class="btn">View All Moments</a>
+        </section>
+      </div>
+    </main>
+  </template>  
 </body>
 </html>
