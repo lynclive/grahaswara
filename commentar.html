@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Consumer - Graha Swara</title>
+  <link rel="stylesheet" href="web.css" />
+  <link rel="stylesheet" href="animate.css">
+  <script src="web.js" defer></script>
+</head>
+<body>  
+  <div id="layout"></div>
+
+  <template id="page-content">
+    <main class="consumer-content">
+      <div id="consumer-page" class="consumer-page">  
+        <div class="consumer-text">        
+          <h1>Tell Us What You Think</h1>
+          <p>We’d love to hear your thoughts, impressions, or experiences with Graha Swara!</p>
+        </div>
+
+    <section class="comment-section">
+        <form id="comment-form" action="https://formsubmit.co/verenatri55@gmail.com" method="POST">
+
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://zunniee.github.io/Graha_Swara/index.html">
+
+          <div class="your-name">
+            <input type="text" name="name" placeholder="Your Name (optional)" class="input"/>
+          </div>
+          <div class="your-message">
+            <textarea class="message" name="message" placeholder="Write your message here... (Your message will be sent directly to the owner)" required></textarea>
+          </div>
+          <div class="submit">
+            <button class="submit-btn" type="submit">Submit</button>
+          </div>
+        </form>
+
+        <!-- <script>
+  const form = document.getElementById("comment-form");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault(); // prevent default FormSubmit behavior
+
+    // Create form data to send
+    const formData = new FormData(form);
+
+    fetch("https://formsubmit.co/ajax/verenatri55@gmail.com.com", {
+      method: "POST",
+      body: formData,
+    })
+      .then((response) => {
+        if (response.ok) {
+          alert("Thanks for your opinion!");
+          setTimeout(() => {
+            window.location.href = "https://zunniee.github.io/Graha_Swara/index.html";
+          }, 1500); // 1.5 second delay before redirect
+        } else {
+          alert("Something went wrong. Please try again.");
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        alert("There was an error submitting the form.");
+      });
+  });
+</script> -->
+
+    </section>
+
+    
+        <!-- <div class="comment-list" id="comment-list">
+            Comments will appear here 
+        </div> -->
+      </div>
+    </main>
+  </template>
+
+
+
+
+  <!-- Firebase -->
+ <!-- <script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+  import { getFirestore, collection, addDoc, serverTimestamp, query, orderBy, onSnapshot } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+
+  document.addEventListener("DOMContentLoaded", async () => {
+    // ⬇ Masukkan template ke dalam #layout agar elemen form dan comment list tersedia
+    const layout = document.getElementById('layout');
+    const template = document.getElementById('page-content');
+    if (layout && template) {
+      layout.innerHTML = template.innerHTML;
+    } else {
+      console.error("Layout atau template tidak ditemukan");
+      return;
+    }
+
+    // ⬇ Ambil elemen form dan list komentar setelah template dimuat
+    const form = document.getElementById('comment-form');
+    const commentList = document.getElementById('comment-list');
+
+    if (!form || !commentList) {
+      console.error("Form atau comment-list tidak ditemukan di halaman.");
+      return;
+    }
+
+    // ⬇ Konfigurasi Firebase
+    const firebaseConfig = {
+      apiKey: "AIzaSyA6zctpkaWmMJAlnjydOiUStDE45kFKHto",
+      authDomain: "graha-swara-comment.firebaseapp.com",
+      projectId: "graha-swara-comment",
+      storageBucket: "graha-swara-comment.firebasestorage.app",
+      messagingSenderId: "254496796175",
+      appId: "1:254496796175:web:26636e91e0fd5f577c3d7a",
+      measurementId: "G-WW3THHERR9"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    // ⬇ Proses submit form komentar
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const name = form.name.value.trim() || "Anonymous";
+      const message = form.message.value.trim();
+      if (!message) return;
+
+      try {
+        await addDoc(collection(db, "comments"), {
+          name,
+          message,
+          createdAt: serverTimestamp()
+        });
+        form.reset();
+      } catch (err) {
+        console.error("Gagal menambahkan komentar:", err);
+      }
+    });
+
+    // ⬇ Menampilkan komentar secara real-time
+    const q = query(collection(db, "comments"), orderBy("createdAt", "desc"));
+    onSnapshot(q, (snapshot) => {
+      commentList.innerHTML = "";
+      snapshot.forEach((doc) => {
+        const data = doc.data();
+        const commentEl = document.createElement("div");
+        commentEl.classList.add("comment");
+        commentEl.innerHTML = `
+          <div class="name">${data.name}</div>
+          <div class="message">${data.message}</div>
+        `;
+        commentList.appendChild(commentEl);
+      });
+    });
+  });
+</script> -->
+</body>
+</html>

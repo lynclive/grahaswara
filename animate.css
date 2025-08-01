@@ -1,0 +1,434 @@
+
+@keyframes underline-slide {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+@keyframes spinZoomFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) rotate(-45deg);
+  }
+  40% {
+    opacity: 1;
+    transform: scale(1.1) rotate(10deg);
+  }
+  73% {
+    transform: scale(0.98); /* bounce-back */
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes zoomOutFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(1.8);
+  }
+  45% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+}
+@keyframes spreadFadeIn {
+  0% {
+    opacity: 0;
+    transform: scaleX(0.2);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleX(1.1); /* overshoot */
+  }
+  70% {
+    transform: scaleX(0.98); /* bounce-back */
+  }
+  100% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes upLeftFadeIn {
+  0% {
+    opacity: 0;
+    transform: translate(50px, 50px);
+  }
+  60% {
+    opacity: 1;
+    transform: translate(-5px, -5px); /* overshoot */
+  }
+  80% {
+    transform: translate(2px, 2px);   /* bounce-back */
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes rightFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(10px); /* overshoot */
+  }
+  80% {
+    transform: translateX(-3px); /* bounce-back */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes downLeftFadeIn {
+  0% {
+    opacity: 0;
+    transform: translate(50px, -50px);
+  }
+  60% {
+    opacity: 1;
+    transform: translate(-5px, 5px); /* overshoot */
+  }
+  80% {
+    transform: translate(2px, -2px); /* bounce-back */
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+/* Prevent animations during loading */
+body:not(.loaded) .bumi,
+body:not(.loaded) .teks,
+body:not(.loaded) .filler,
+body:not(.loaded) .joglo,
+body:not(.loaded) .honai,
+body:not(.loaded) .tongkonan,
+body:not(.loaded) .moment-text,
+body:not(.loaded) .about-logo,
+body:not(.loaded) .about-text,
+body:not(.loaded) .about,
+body:not(.loaded) .copyright,
+body:not(.loaded) .social {
+  animation-play-state: paused !important;
+}
+
+.bumi {
+  animation: spinZoomFadeIn 2s ease-out both;
+  z-index: 2;
+}
+
+.teks {
+  opacity: 0;
+  animation: zoomOutFadeIn 2s ease-out 0.1s both; /* single declaration */
+  z-index: 4;
+}
+
+.filler {
+  opacity: 0;
+  transform-origin: center; /* spreads from center */
+  animation: spreadFadeIn 1.5s ease-out 1s both;
+  z-index: 1;
+}
+
+.joglo {
+  opacity: 0;
+  animation: upLeftFadeIn 1.5s ease-out 1.3s both;
+  z-index: 5;
+}
+
+.honai {
+  opacity: 0;
+  animation: rightFadeIn 1.5s ease-out 1.5s both;
+  z-index: 6;
+}
+
+.tongkonan {
+  opacity: 0;
+  animation: downLeftFadeIn 1.5s ease-out 1.7s both;
+  z-index: 3;
+}
+
+/* Start animations when page is loaded */
+body.loaded .bumi {
+  animation: spinZoomFadeIn 2s ease-out 1s both;
+}
+
+body.loaded .teks {
+  animation: zoomOutFadeIn 2s ease-out 1.1s both;
+}
+
+body.loaded .filler {
+  animation: spreadFadeIn 1.5s ease-out 2s both;
+}
+
+body.loaded .joglo {
+  animation: upLeftFadeIn 1.5s ease-out 2.3s both;
+}
+
+body.loaded .honai {
+  animation: rightFadeIn 1.5s ease-out 2.5s both;
+}
+
+body.loaded .tongkonan {
+  animation: downLeftFadeIn 1.5s ease-out 2.7s both;
+}
+
+/*menu*/
+@keyframes fadeInMenu {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.menu.show ul {
+  animation: fadeInMenu 0.4s ease forwards;
+}
+
+/*moment*/
+@keyframes fadeIn {
+  to{
+    opacity: 1;
+  }
+}
+
+.moment-text{
+  flex: 1;
+  color: #7D0A0A;
+  font-size: 18px;
+  word-spacing: 5px;
+  text-align: center;
+  padding-top: 20px;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out 0.5s forwards;
+}
+.product-text{
+  flex: 1;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out 1s forwards;
+}
+/*about*/
+.about-logo {
+  flex: 0 0 auto;
+  flex: 0 0 45%;
+  transform: translateX(-50px);
+  opacity: 0;
+  animation: slideIn 2s ease 1s forwards;
+  }
+
+  .about-text {
+  flex: 1;
+  font-size: 18px;
+  word-spacing: 5px;
+  transform: translateX(50px);
+  opacity: 0;
+  animation: slideIn 2s ease 1s forwards;
+}
+  
+/*footer*/
+@keyframes slideIn {
+  to {
+    transform: translateX(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Footer animations - trigger on scroll */
+/* .about{
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.8s ease;
+}
+
+.copyright{
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.8s ease;
+}
+
+.social{
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease;
+} */
+
+/* Active state when footer is visible */
+/* .footer.animate .about {
+  opacity: 1;
+  transform: translateX(0);
+  overflow: hidden;
+}
+
+.footer.animate .copyright {
+  opacity: 1;
+  transform: translateX(0);
+  overflow: hidden;
+}
+
+.footer.animate .social {
+  opacity: 1;
+  transform: translateY(0);
+  overflow: hidden;
+  margin-left: 0;
+} */
+
+@media (max-width: 768px) {
+  .about-logo {
+    flex: 0 0 auto;
+    flex: 0 0 45%;
+    transform: translateY(-50px);
+    opacity: 0;
+    animation: slideIn 2s ease 1s forwards;
+  }
+
+  .about-text {
+   padding-top: 1em;
+   text-align: left;
+   margin: 2em  ;
+  }
+  .mainhome-content{
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: 0;
+    background-position-x: -90px;
+  }
+ 
+  .product-item img{
+    width: 100%;
+    max-width: 300px;
+    height: 100%;
+    max-height: 200px ;
+  }
+  .mainproduct-content{
+    background-image: url(assets/background-product-mobile.png);
+    background-position-x: -30px;
+    height: 100%;
+    min-height: 800px;
+  }
+  .product-text{
+    margin-top: 50px;
+  }
+  .moment-pic img{
+    width: 100%;
+    max-width: 300px;
+    margin-top: 30px;
+  }
+  .image-stack{
+    margin:   40px auto 0;
+  }
+  .abouts{
+    margin-top: 320px;
+  }
+  .moment-item img{
+    width: 100%;
+    max-width: 300px;
+    margin-right: 10px;
+  }
+  .logo{
+    margin: 0 ;
+  }
+  .about-layout{
+    background-size: cover;
+    background-position: right;
+  }
+  .about p{
+    width: 450px;
+  }
+
+ .moment-carouselwrapper {
+    max-width: 100vw;
+    min-height: 300px;
+    overflow: visible;
+    box-sizing: border-box;
+  }
+  .carousel-section{
+    margin-top: 0;
+    margin-bottom: 1rem;
+    padding-right: 2rem;
+  }
+  .moment-carousel {
+    width: 100%;  
+    padding: 1rem 1rem;
+    flex: 0 0 500px;
+  }
+  .moment-carousel-track{
+    width: 100%;
+    max-width: 400px;
+    gap: 0;
+  }
+  .moment-slide {
+    flex: 0 0 180px; 
+    opacity: 0.5;
+    transform: scale(0.7);
+  }
+
+  .moment-slide.active {
+    transform: scale(1.4); /* Slightly smaller scale on mobile for better fit */
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 3;
+  }
+
+  .moment-slide.left,
+  .moment-slide.right {
+    opacity: 0.6;
+    z-index: 2;
+  }
+
+  .moment-slide img{
+    width: 100%;
+    max-width: 500px;
+    max-height: 400px;
+    height: auto;
+    border-radius: 15px;
+    object-fit: contain;
+    justify-content: center;
+  }
+
+  .nav-btn {
+    padding: 8px 15px;
+    font-size: 16px;
+    top: 90%;
+  }
+  
+  #prev {
+    left: 20%;
+  }
+
+  #next {
+    right: 10%;
+  }
+
+  .footer-top{
+    flex-direction: column;
+  }
+
+  .social{
+    margin-left: 0;
+  }
+}
