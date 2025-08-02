@@ -1,0 +1,12 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/about", "destination": "/about.html" },
+    { "source": "/product", "destination": "/product.html" },
+    { "source": "/moment", "destination": "/moment.html" },
+    { "source": "/layout", "destination": "/layout.html" },
+    { "source": "/comment", "destination": "/commentar.html" },
+    { "source": "/homepage", "destination": "/homepage.html" }
+  ],
+  "outputDirectory": "."
+}
