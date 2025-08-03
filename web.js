@@ -20,6 +20,16 @@ document.addEventListener('DOMContentLoaded', () => {
       if (pageContent) layoutContainer.appendChild(pageContent.content.cloneNode(true));
       if (footer) layoutContainer.appendChild(footer);
 
+      //  Inject favicon directly into <head>
+      const faviconLink = document.createElement('link');
+      faviconLink.rel = 'icon';
+      faviconLink.type = 'image/webp';
+      faviconLink.href = 'assets/favicon.webp';
+          
+      if (!document.querySelector('link[rel="icon"]')) {
+        document.head.appendChild(faviconLink);
+      }
+
       // Initialize everything after layout is loaded
       initializeApp();
     });
