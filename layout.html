@@ -3,7 +3,9 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Graha_Swara</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="web.css">
+    <link rel="stylesheet" href="animate.css">
+    <link rel="icon" type="image/webp" href="assets/favicon.webp">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
   </head>
 
@@ -15,7 +17,7 @@
 
 <header class="header">
   <div class="logo">
-    <a href="index.html"><img src="assets/logo.png" alt="Logo" /></a>
+    <a href="index.html"><img src="assets/outlined-logo.webp" alt="Logo" /></a>
   </div>
 
   <button class="hamburger" id="hamburger">
@@ -30,12 +32,21 @@
       <li><a href="about.html">ABOUT</a></li>
       <li><a href="product.html">PRODUCTS</a></li>
       <li><a href="moment.html">MOMENTS</a></li>
-      <li><a href="commentar.html">CONSUMER</a></li> 
     </ul>
   </nav>
 </header>
 
 <footer class="footer">
+  <div class="footer-comment-section">
+    <h2>Leave a Comment</h2>
+    <form id="footer-comment-form" action="https://formspree.io/f/xjkoeonz" method="POST">
+      <input type="text" name="name" placeholder="Your Name *" required class="input" />
+      <input type="email" name="email" placeholder="Your Email" class="input" />
+      <textarea name="message" placeholder="Your Comment *" required class="message"></textarea>
+      <button type="submit" class="submit-btn">Send</button>
+    </form>
+  </div>
+
   <div class="footer-top">
     <div class="about">
       <h2>About</h2>
